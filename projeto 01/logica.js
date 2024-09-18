@@ -24,3 +24,27 @@ for (let i = 0; i < dados.length; i++) {
 }
 
 // ####proxima update sistema de vida dos personagens####
+
+const valorSistema = 10;
+
+// Obtendo elementos
+const valorInput = document.getElementById('valorInput');
+const calcularBotao = document.getElementById('calcularBotao');
+const resultadoDiv = document.getElementById('resultado');
+
+// Adicionando evento de clique ao botão
+calcularBotao.addEventListener('click', () => {
+    // Obtendo o valor inserido pelo usuário
+    const valorUsuario = parseInt(valorInput.value);
+
+    // Verificando se o valor é um número
+    if (!isNaN(valorUsuario)) {
+        // Realizando o cálculo
+        const resultado = valorUsuario * valorSistema;
+
+        // Exibindo o resultado na página
+        resultadoDiv.textContent = `Resultado: ${resultado}`;
+    } else {
+        resultadoDiv.textContent = "Por favor, insira um número válido.";
+    }
+});
