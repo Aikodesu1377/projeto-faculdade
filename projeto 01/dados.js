@@ -28,12 +28,6 @@ let dados = [
         vida: "600",
         ataqueCorpo: "50",
         ataqueDistancia: "0"
-    },
-    {
-        classe: "guaxinim",
-        vida: "600",
-        ataqueCorpo: "50",
-        ataqueDistancia: "0"
     }
 ]
 
