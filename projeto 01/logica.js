@@ -10,7 +10,8 @@ for (let i = 0; i < dados.length; i++) {
   details.innerHTML = `
     <strong>Vida:</strong> ${dado.vida}<br>
     <strong>Ataque corpo a corpo:</strong> ${dado.ataqueCorpo}<br>
-    <strong>Magia:</strong> ${dado.ataqueDistancia}
+    <strong>Ataque a distancia:</strong> ${dado.ataqueDistancia}<br>
+    <strong>Defesa:</strong> ${dado.defesa}
   `;
 
   // Adiciona o texto da classe ao botão e o elemento <p> como filho
