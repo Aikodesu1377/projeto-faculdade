@@ -1,6 +1,7 @@
 //##Lógica Nome##//
 
-let nome = prompt("digite seu nome de personagem:");
+
+let nome = prompt ("digite seu nome de personagem:");
 
 // Obtém o elemento HTML com o ID "inputNome"
 let alteraNome = document.getElementById("inputNome");
@@ -9,10 +10,11 @@ let alteraNome = document.getElementById("inputNome");
 alteraNome.innerHTML = `<h1>${nome}</h1>`;
 
 
+
 //##Lógica Ataque e defesa##//
 
 
-function atualizarAtaqueDefesa() {
+function atualizarAtaque() {
     // Obtém o elemento HTML onde o resultado será exibido 
     let resultadoElementA = document.getElementById("resultado");
     let resultadoElementD = document.getElementById("resultadoD");
@@ -53,3 +55,13 @@ document.getElementById("calcularBotaoD").addEventListener("click", () => {
     // Chama a função para atualizar o ataque
     atualizarAtaque(valorInputD);
   });
+
+
+//##Lógica Vida##//
+
+    // Obtém o ID da classe do elemento atual
+    const classeId = document.getElementById("classe").getAttribute("data-classe");
+  
+    // Busca a classe correspondente no array de dados
+    const classe = dados.find(classe => classe.classe === classeId);
+
