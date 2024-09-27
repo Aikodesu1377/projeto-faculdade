@@ -59,9 +59,17 @@ document.getElementById("calcularBotaoD").addEventListener("click", () => {
 
 //##Lógica Vida##//
 
-    // Obtém o ID da classe do elemento atual
-    const classeId = document.getElementById("classe").getAttribute("data-classe");
+// Obtém o ID da classe do elemento atual
+const classeId = document.getElementById("classe").getAttribute("data-classe");
   
-    // Busca a classe correspondente no array de dados
-    const classe = dados.find(classe => classe.classe === classeId);
+// Busca a classe correspondente no array de dados
+const classe = dados.find(classe => classe.classe === classeId);
+
+
+// Cria contador númerico de vida
+let valorVida = document.getElementById("contador-vidas")
+let displayVida = document.getElementById("vidas")
+valorVida = classe.vida
+
+displayVida.textContent = valorVida
 
