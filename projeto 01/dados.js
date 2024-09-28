@@ -33,6 +33,13 @@ let dados = [
         ataqueCorpo: "50",
         defesa: "800",
         ataqueDistancia: "0"
+    },
+    {
+        classe: "Pepsi Men",
+        vida: "5000",
+        ataqueCorpo: "10",
+        defesa: "100",
+        ataqueDistancia: "300"
     }
 ]
 

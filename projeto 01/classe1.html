@@ -13,13 +13,18 @@
         <span id="vidas"></span> de vida restante
     </div>
     <div id="inputNome"></div>
+    <button id="botabatalhar">Batalhar</button>
+    <div id="minhaDivA" class="ocultaA">
         <div id="classe" data-classe="Anjo-Caido"></div>
-        <input type="number" id="valorInput" min="1" max="18">
-        <button id="calcularBotaoA">Calcular Ataque</button>
+            <input type="number" id="valorInput" min="1" max="18" oninput="verificarNumero(this, 'ataque')">
+            <button id="calcularBotaoA">Calcular Ataque</button>
         <div id="resultado"></div>
-        <input type="number" id="valorInputD" min="1" max="18">
-        <button id="calcularBotaoD">Calcular Defesa</button>
+    </div>
+    <div id="minhaDivD" class="ocultaA">
+            <input type="number" id="valorInputD" min="1" max="18" oninput="verificarNumero(this, 'defesa')">
+            <button id="calcularBotaoD">Calcular Defesa</button>
         <div id="resultadoD"></div>
+    </div> 
     <script src="dados.js"></script>
     <script src="logicajogo.js"></script>
 </body>
