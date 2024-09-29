@@ -16,16 +16,15 @@
     <button id="botabatalhar">Batalhar</button>
     <div id="minhaDivA" class="ocultaA">
         <div id="classe" data-classe="Ninja"></div>
-            <input type="number" id="valorInput" min="1" max="18" oninput="verificarNumero(this, 'ataque')">
+            <input type="number" id="valorInput" min="1" max="18">
             <button id="calcularBotaoA">Calcular Ataque</button>
-        <div id="resultado"></div>
     </div>
     <div id="minhaDivD" class="ocultaA">
-            <input type="number" id="valorInputD" min="1" max="18" oninput="verificarNumero(this, 'defesa')">
+            <input type="number" id="valorInputD" min="1" max="18">
             <button id="calcularBotaoD">Calcular Defesa</button>
-        <div id="resultadoD"></div>
-    </div> 
-    <p id="mensagem"></p>
+    </div>
+    <div id="resultado"></div>
+    <div id="resultadoD"></div> 
     <script src="dados.js"></script>
     <script src="logicajogo.js"></script>
 </body>

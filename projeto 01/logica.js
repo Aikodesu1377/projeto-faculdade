@@ -26,5 +26,3 @@ for (let i = 0; i < dados.length; i++) {
   classes.appendChild(botaoSel);
 }
 
-// ####proxima update sistema de vida dos personagens####
-

@@ -23,7 +23,7 @@ function calcularAtaque(valorMultiplicador) {
   const danoTotal = classe.ataqueCorpo * valorMultiplicador;
 
   // Atualiza o conteúdo do elemento HTML
-  resultadoElement.textContent = `O dano total do ${classe.classe} é: ${danoTotal}`;
+  resultadoElement.textContent = `O dano total de ${nome} ${classe.classe} foi: ${danoTotal}`;
 }
 
 function calcularDefesa(valorMultiplicador) {
@@ -36,37 +36,38 @@ function calcularDefesa(valorMultiplicador) {
   const defesaTotal = classe.defesa * valorMultiplicador;
 
   // Atualiza o conteúdo do elemento HTML
-  resultadoElement.textContent = `A defesa total do ${classe.classe} foi: ${defesaTotal}`;
+  resultadoElement.textContent = `A defesa total de ${nome} ${classe.classe} foi: ${defesaTotal}`;
 }
 
 // Adiciona um event listener ao botão de calcular em cada HTML
 document.getElementById("calcularBotaoA").addEventListener("click", () => {
   // Obtém o valor do input
   const valorInput = document.getElementById("valorInput").value;
-
+  // Valida se foi colocado algum valor
+  if (valorInput == 0 || valorInput > 18){
+    alert("Por favor, insira um número válido.");
+  } else {
   // Chama a função para atualizar o ataque
   calcularAtaque(parseInt(valorInput));
+  divA.style.display = 'none';
+  divD.style.display = 'none';
+  }
 });
 
 document.getElementById("calcularBotaoD").addEventListener("click", () => {
   // Obtém o valor do input
   const valorInputD = document.getElementById("valorInputD").value;
-
+  // Valida se foi colocado algum valor
+  if (valorInputD == 0 || valorInputD > 18) {
+  alert("Por favor, insira um número válido.");
+  } else {
   // Chama a função para atualizar a defesa
   calcularDefesa(parseInt(valorInputD));
+  divA.style.display = 'none';
+  divD.style.display = 'none';
+  }
 });
 
-
-//##Detecta input##//
-
-
-function verificarNumero(tipo) {
-  const outroInput = tipo === 'ataque' ? document.getElementById('valorInputD') : document.getElementById('valorInput');
-
-  if (outroInput == "ataque"){
-    alert (outroInput)
-  }
-}
 
 //##Lógica Vida##//
 
@@ -107,8 +108,6 @@ botao.addEventListener('click', () => {
 });
 
 ///////Proxima atualização 
-// - continuar detecção de ataque e defesa para bloquear e desbloquear input(//##Detecta input##//) linha 60 do código
-// - iniciar dadosInimigos.js
 // - realizar lógica de retirar vida
 // - aprimorar adição de nome de personagem(iniciar um novo html para implementação de nome do jogador)
 // - limitar input para receber apenas numeros de 1 á 18 sem sinais ou coisas do tipo
