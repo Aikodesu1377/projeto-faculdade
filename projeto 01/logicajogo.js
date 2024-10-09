@@ -44,7 +44,7 @@ document.getElementById("calcularBotaoA").addEventListener("click", () => {
   // Obtém o valor do input
   const valorInput = document.getElementById("valorInput").value;
   // Valida se foi colocado algum valor
-  if (valorInput == 0 || valorInput > 18){
+  if (valorInput == 0 || valorInput > 12){
     alert("Por favor, insira um número válido.");
   } else {
   // Chama a função para atualizar o ataque
@@ -58,7 +58,7 @@ document.getElementById("calcularBotaoD").addEventListener("click", () => {
   // Obtém o valor do input
   const valorInputD = document.getElementById("valorInputD").value;
   // Valida se foi colocado algum valor
-  if (valorInputD == 0 || valorInputD > 18) {
+  if (valorInputD == 0 || valorInputD > 12) {
   alert("Por favor, insira um número válido.");
   } else {
   // Chama a função para atualizar a defesa
@@ -79,18 +79,29 @@ const classeId = document.getElementById("classe").getAttribute("data-classe");
 const classe = dados.find(classe => classe.classe === classeId);
 
 
-// Cria contador númerico de vida
-let valorVida = document.getElementById("contador-vidas")
+
+// Obtém os elementos HTML
+let contadorVidas = document.getElementById("contador-vidas");
 let displayVida = document.getElementById("vidas")
-valorVida = classe.vida
+let botaoRetirarVida = document.getElementById("tirar-vida");
+displayVida.textContent = classe.vida;
+// Função para retirar vida
+function retirarVidaJogador() {
+  // Supondo que 'classe.vida' já esteja definida e contenha o valor atual da vida
+  classe.vida -= 100; // Diminui a vida em 10 pontos
 
-displayVida.textContent = valorVida
+  // Atualiza o display na tela
+  displayVida.textContent = classe.vida;
+}
 
- 
+// Associa a função ao evento de clique do botão
+botaoRetirarVida.addEventListener("click", retirarVidaJogador);
+
+
 //##Criar modo batalha##
 
 
-const botao = document.getElementById("botabatalhar");
+const botao = document.getElementById("botaobatalhar");
 const divA = document.getElementById("minhaDivA");
 const divD = document.getElementById("minhaDivD");
 document.addEventListener('DOMContentLoaded', () => {
@@ -105,9 +116,22 @@ botao.addEventListener('click', () => {
     divA.style.display = 'block';
     divD.style.display = 'block';
     botao.style.display = 'none';
+  // Gera um número aleatório entre 1 e 3 (índices do array)
+  const indiceAleatorio = Math.floor(Math.random() * dadosInimigos.length);
+  
+  // Encontra o inimigo aleatório usando o índice
+  const inimigoAleatorio = dadosInimigos[indiceAleatorio];
+
+  // Exibe o nome do inimigo em um elemento HTML (por exemplo, um parágrafo)
+  const inimigoEscolhido = document.getElementById('inimigo');
+  inimigoEscolhido.textContent = `O inimigo aleatório é: ${inimigoAleatorio.classe}`;
+  const vidaDoInimigoEscolhido = document.getElementById('inimigoVida')
+  vidaDoInimigoEscolhido.textContent = `A vida do inimigo ${inimigoAleatorio.classe}: ${inimigoAleatorio.vida}`
 });
 
 ///////Proxima atualização 
 // - realizar lógica de retirar vida
 // - aprimorar adição de nome de personagem(iniciar um novo html para implementação de nome do jogador)
 // - limitar input para receber apenas numeros de 1 á 18 sem sinais ou coisas do tipo
+// - adicionar inimigos
+
