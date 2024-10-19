@@ -47,6 +47,7 @@ document.getElementById("calcularBotaoA").addEventListener("click", () => {
   if (valorInput == 0 || valorInput > 18){
     alert("Por favor, insira um número válido.");
   } else {
+  retirarVidaJogador()
   // Chama a função para atualizar o ataque
   calcularAtaque(parseInt(valorInput));
   divA.style.display = 'none';
@@ -65,6 +66,8 @@ document.getElementById("calcularBotaoD").addEventListener("click", () => {
   calcularDefesa(parseInt(valorInputD));
   divA.style.display = 'none';
   divD.style.display = 'none';
+  let defesaResultado = retirarVidaJogador() - parseInt(valorInputD)
+  displayVida.textContent = defesaResultado;
   }
 });
 
@@ -79,18 +82,28 @@ const classeId = document.getElementById("classe").getAttribute("data-classe");
 const classe = dados.find(classe => classe.classe === classeId);
 
 
-// Cria contador númerico de vida
-let valorVida = document.getElementById("contador-vidas")
+// Obtém os elementos HTML
+let contadorVidas = document.getElementById("contador-vidas");
 let displayVida = document.getElementById("vidas")
-valorVida = classe.vida
+let botaoRetirarVida = document.getElementById("tirar-vida");
+displayVida.textContent = classe.vida;
+// Função para retirar vida
+function retirarVidaJogador() {
+  // Supondo que 'classe.vida' já esteja definida e contenha o valor atual da vida
+  let retiraVida = classe.vida -= inimigoAleatorio.ataqueCorpo; // Diminui a vida
 
-displayVida.textContent = valorVida
+  // Atualiza o display na tela
+  displayVida.textContent = retiraVida;
+}
+
+// Associa a função ao evento de clique do botão
+botaoRetirarVida.addEventListener("click", retirarVidaJogador);
 
  
 //##Criar modo batalha##
 
 
-const botao = document.getElementById("botabatalhar");
+const botao = document.getElementById("botaobatalhar");
 const divA = document.getElementById("minhaDivA");
 const divD = document.getElementById("minhaDivD");
 document.addEventListener('DOMContentLoaded', () => {
@@ -107,6 +120,17 @@ botao.addEventListener('click', () => {
     botao.style.display = 'none';
 });
 
+  // Gera um número aleatório entre 1 e 3 (índices do array)
+  const indiceAleatorio = Math.floor(Math.random() * dadosInimigos.length);
+  
+  // Encontra o inimigo aleatório usando o índice
+  const inimigoAleatorio = dadosInimigos[indiceAleatorio];
+
+  // Exibe o nome do inimigo em um elemento HTML (por exemplo, um parágrafo)
+  const inimigoEscolhido = document.getElementById('inimigo');
+  inimigoEscolhido.textContent = `O inimigo aleatório é: ${inimigoAleatorio.classe}`;
+  const vidaDoInimigoEscolhido = document.getElementById('inimigoVida')
+  vidaDoInimigoEscolhido.textContent = `A vida do inimigo ${inimigoAleatorio.classe}: ${inimigoAleatorio.vida}`
 ///////Proxima atualização 
 // - realizar lógica de retirar vida
 // - aprimorar adição de nome de personagem(iniciar um novo html para implementação de nome do jogador)
