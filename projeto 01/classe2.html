@@ -9,11 +9,13 @@
     <header>
         <button onclick="location.href='index.html'">Voltar</button>
     </header>
+    <div id="inimigo"></div>
+    <div id="inimigoVida"></div>
     <div id="contador-vidas">
         <span id="vidas"></span> de vida restante
     </div>
     <div id="inputNome"></div>
-    <button id="botabatalhar">Batalhar</button>
+    <button id="botaobatalhar">Batalhar</button>
     <div id="minhaDivA" class="ocultaA">
         <div id="classe" data-classe="Guerreiro"></div>
             <input type="number" id="valorInput" min="1" max="18">
@@ -22,10 +24,12 @@
     <div id="minhaDivD" class="ocultaA">
             <input type="number" id="valorInputD" min="1" max="18">
             <button id="calcularBotaoD">Calcular Defesa</button>
-    </div> 
+    </div>
+    <button id="tirar-vida">Tirar vida do Calabreso</button>
     <div id="resultado"></div>
     <div id="resultadoD"></div>
     <script src="dados.js"></script>
     <script src="logicajogo.js"></script>
+    <script src="dadosInimigos.js"></script>
 </body>
 </html>
