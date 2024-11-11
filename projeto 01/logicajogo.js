@@ -1,13 +1,3 @@
-//##Lógica Nome##//
-
-
-let nome = prompt ("digite seu nome de personagem:");
-
-// Obtém o elemento HTML com o ID "inputNome"
-let alteraNome = document.getElementById("inputNome");
-
-// Atribui o novo conteúdo HTML ao elemento, incluindo o nome do personagem
-alteraNome.innerHTML = `<h1>${nome}</h1>`;
 
 
 //##Lógica Ataque e defesa##//
@@ -82,10 +72,6 @@ const classeId = document.getElementById("classe").getAttribute("data-classe");
 const classe = dados.find(classe => classe.classe === classeId);
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 8f5d32c11ef6f6858ce36f3f2a467fdb3e25f08b
 // Obtém os elementos HTML
 let contadorVidas = document.getElementById("contador-vidas");
 let displayVida = document.getElementById("vidas")
@@ -94,8 +80,7 @@ displayVida.textContent = classe.vida;
 // Função para retirar vida
 function retirarVidaJogador() {
   // Supondo que 'classe.vida' já esteja definida e contenha o valor atual da vida
-<<<<<<< HEAD
-  let retiraVida = classe.vida -= inimigoAleatorio.ataqueCorpo; // Diminui a vida
+  let retiraVida = classe.vida - inimigoAleatorio.ataqueCorpo; // Diminui a vida
 
   // Atualiza o display na tela
   displayVida.textContent = retiraVida;
@@ -103,17 +88,6 @@ function retirarVidaJogador() {
 
 // Associa a função ao evento de clique do botão
 botaoRetirarVida.addEventListener("click", retirarVidaJogador);
-=======
-  classe.vida -= 100; // Diminui a vida em 10 pontos
-
-  // Atualiza o display na tela
-  displayVida.textContent = classe.vida;
-}
-
-// Associa a função ao evento de clique do botão
-botaoRetirarVida.addEventListener("click", retirarVidaJogador);
-
->>>>>>> 8f5d32c11ef6f6858ce36f3f2a467fdb3e25f08b
 
 //##Criar modo batalha##
 
@@ -133,11 +107,6 @@ botao.addEventListener('click', () => {
     divA.style.display = 'block';
     divD.style.display = 'block';
     botao.style.display = 'none';
-  // Gera um número aleatório entre 1 e 3 (índices do array)
-  const indiceAleatorio = Math.floor(Math.random() * dadosInimigos.length);
-  
-  // Encontra o inimigo aleatório usando o índice
-  const inimigoAleatorio = dadosInimigos[indiceAleatorio];
 
   // Exibe o nome do inimigo em um elemento HTML (por exemplo, um parágrafo)
   const inimigoEscolhido = document.getElementById('inimigo');
@@ -146,20 +115,14 @@ botao.addEventListener('click', () => {
   vidaDoInimigoEscolhido.textContent = `A vida do inimigo ${inimigoAleatorio.classe}: ${inimigoAleatorio.vida}`
 });
 
-  // Gera um número aleatório entre 1 e 3 (índices do array)
+  // Gera um inimigo aleatório
   const indiceAleatorio = Math.floor(Math.random() * dadosInimigos.length);
   
   // Encontra o inimigo aleatório usando o índice
   const inimigoAleatorio = dadosInimigos[indiceAleatorio];
 
-  // Exibe o nome do inimigo em um elemento HTML (por exemplo, um parágrafo)
-  const inimigoEscolhido = document.getElementById('inimigo');
-  inimigoEscolhido.textContent = `O inimigo aleatório é: ${inimigoAleatorio.classe}`;
-  const vidaDoInimigoEscolhido = document.getElementById('inimigoVida')
-  vidaDoInimigoEscolhido.textContent = `A vida do inimigo ${inimigoAleatorio.classe}: ${inimigoAleatorio.vida}`
 ///////Proxima atualização 
 // - realizar lógica de retirar vida
 // - aprimorar adição de nome de personagem(iniciar um novo html para implementação de nome do jogador)
 // - limitar input para receber apenas numeros de 1 á 18 sem sinais ou coisas do tipo
 // - adicionar inimigos
-

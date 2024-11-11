@@ -23,6 +23,13 @@ for (let i = 0; i < dados.length; i++) {
   window.location.href = `classe${i}.html`;
   };
 
+  // Cria um elemento <img> para a imagem
+  const img = document.createElement("img");
+  // Define o caminho da imagem com base na classe (ajuste conforme necessário)
+  img.src = `imagens/${dado.classe.replace(/ /g, "_")}.png`;
+  img.alt = `Imagem de ${dado.classe}`;
+
   classes.appendChild(botaoSel);
+  classes.appendChild(img);
 }
 

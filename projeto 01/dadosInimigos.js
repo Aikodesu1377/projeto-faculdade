@@ -5,8 +5,6 @@ let dadosInimigos = [
         ataqueCorpo: "500",
         defesa: "100",
         ataqueDistancia: "0"    
-<<<<<<< HEAD
-=======
     },
     {
         classe: "Pirata",
@@ -35,6 +33,5 @@ let dadosInimigos = [
         ataqueCorpo: "200",
         defesa: "400",
         ataqueDistancia: "800"    
->>>>>>> 8f5d32c11ef6f6858ce36f3f2a467fdb3e25f08b
     }
 ]
