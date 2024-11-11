@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terrence James</title>
+    <link rel="stylesheet" href="style.css"> </head>
+</head>
+<body>
+    <header>
+        <button onclick="location.href='index.html'">Voltar</button>
+    </header>
+    <div id="inimigo"></div>
+    <div id="inimigoVida"></div>
+    <div id="contador-vidas">
+        <span id="vidas"></span> de vida restante
+    </div>
+    <div id="inputNome"></div>
+    <button id="botaobatalhar">Batalhar</button>
+    <div id="minhaDivA" class="ocultaA">
+        <div id="classe" data-classe="Terrence James (ofensivo)"></div>
+            <input type="number" id="valorInput" min="1" max="18">
+            <button id="calcularBotaoA">Calcular Ataque</button>
+    </div>
+    <div id="minhaDivD" class="ocultaA">
+            <input type="number" id="valorInputD" min="1" max="18">
+            <button id="calcularBotaoD">Calcular Defesa</button>
+    </div>
+    <div id="tirar-vida"></div>
+    <div id="resultado"></div>
+    <div id="resultadoD"></div>
+    <script src="dadosInimigos.js"></script>
+    <script src="dados.js"></script>
+    <script src="logicajogo.js"></script>
+    <script src="dadosInimigos.js"></script>
+</body>
+</html>
